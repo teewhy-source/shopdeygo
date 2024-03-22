@@ -1,0 +1,55 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-style: hidden;
+    background-color: rgba(238, 236, 235, 0.87); /* Adjust background color */
+    box-shadow: 0 2px 4px rgba(46, 11, 170, 0.1); /* Add box shadow */
+  }
+  
+  .logo-container {
+    text-decoration: none;
+    font-family: "Cousine", monospace, "Griffy", system-ui;
+  }
+  
+  .image {
+    width: 100px; /* Adjust width of the logo image */
+    height: auto;
+    border-radius: 3rem;
+    animation: glitch 2s infinite; /* Apply glitch animation */
+  }
+  
+  .nav-links-container {
+    display: flex;
+  }
+  
+  .nav-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: solid rgb(143, 114, 250); /* Adjust color of the link */
+    font-family: "Cousine", monospace, "Griffy", system-ui;
+  }
+  
+  .nav-link:hover {
+    color: rgba(15, 3, 58, 0.884); /* Adjust color on hover */
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(-5px, 5px);
+    }
+    50% {
+      transform: translate(5px, -5px);
+    }
+    75% {
+      transform: translate(-5px, 5px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  

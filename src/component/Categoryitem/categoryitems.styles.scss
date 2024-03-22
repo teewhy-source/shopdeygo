@@ -1,0 +1,83 @@
+.category-container {
+    min-width: 32.2%;
+    height: 240px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(162, 114, 250);
+    margin: 0 7.5px 15px;
+    overflow: hidden;
+    border-radius: 1rem;
+    font-family: "Cousine", monospace;
+    position: relative; // Added position relative to create stacking context for absolute positioning
+  
+    &:hover {
+      cursor: pointer;
+      .background-image {
+        transform: scale(1.1);
+        transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
+      .category-body-container {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        font-family: "Cousine", monospace;
+      }
+    }
+  
+    &.large {
+      height: 380px;
+    }
+  
+    &:first-child {
+      margin-right: 7.5px;
+    }
+  
+    &:last-child {
+      margin-left: 7.5px;
+    }
+  
+    .background-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  
+    .category-body-container {
+      height: 90px;
+      width: 13rem;
+      font-family: "Cousine", monospace;
+      border-radius: 0.2rem;
+      padding: 0.25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 0.2rem solid rgb(143, 114, 250);
+      background-color: rgba(204, 195, 195, 0.473);
+      // opacity: 0;
+      position: absolute;
+      color: rgb(62, 56, 71);
+      font-size: 2rem;
+      font-weight: bold;
+  
+      h2 {
+        font-weight: bold;
+        margin: 0 6px 0;
+        font-size: 1.8rem;
+        color: rgba(15, 3, 58, 0.884);
+        font-family: "Cousine", monospace;
+     
+      }
+  
+      p {
+        font-weight: lighter;
+        font-size: 1rem;
+        font-weight: bold;
+        color: rgba(15, 3, 58, 0.884);
+        font-family: "Cousine", monospace;
+      }
+    }
+  }
