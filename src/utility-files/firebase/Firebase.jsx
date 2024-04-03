@@ -4,8 +4,7 @@ import {
   getAuth,
   signInWithRedirect,
   signInWithPopup,
-  GoogleAuthProvider,
-  signInWithPhoneNumber,
+  GoogleAuthProvider, 
 } from "firebase/auth";
 
 //setting up the firestore, firestore is a different service, so we need to import some methods(firestore, doc,getdoc,setdoc) from firestore. below
@@ -31,13 +30,14 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 // to use the ggogle authentication, you need to set up this configurations, google config 
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
+const googleprovider = new GoogleAuthProvider();
+googleprovider.setCustomParameters({
      prompt:"select_account"
 })
 
-export const auth=getAuth()
-export const signInWithgooglePopup =()=> signInWithPopup(auth,provider)//annonymose function, so passed the auth that i created  and provider that i generated up
+export const auth= getAuth()
+export const signInWithgooglePopup =()=> signInWithPopup(auth,googleprovider)//annonymose function, so passed the auth that i created  and googleproviderprovider that i generated up
+export const signinwithgoogleredirect =()=> signInWithRedirect(auth,googleprovider)
 export const database = getFirestore ()
 
 export  const createuserdocumentfromauth = async (userAuth) =>{ //this function receives user authentication object
