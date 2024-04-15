@@ -5,6 +5,7 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider, 
+  createUserWithEmailAndPassword
 } from "firebase/auth";
 
 //setting up the firestore, firestore is a different service, so we need to import some methods(firestore, doc,getdoc,setdoc) from firestore. below
@@ -40,7 +41,11 @@ export const signInWithgooglePopup =()=> signInWithPopup(auth,googleprovider)//a
 export const signinwithgoogleredirect =()=> signInWithRedirect(auth,googleprovider)
 export const database = getFirestore ()
 
-export  const createuserdocumentfromauth = async (userAuth) =>{ //this function receives user authentication object
+export  const createuserdocumentfromauth = async (
+    userAuth,
+    additionalinfomation = {}
+    ) =>{ //this function receives user authentication object
+    if (!userAuth) return;
     const userdocref = doc(database, "users",userAuth.uid)
     console.log(userdocref);
 
@@ -57,7 +62,8 @@ export  const createuserdocumentfromauth = async (userAuth) =>{ //this function 
             await setDoc(userdocref,{
                 displayName,
                 email,
-                createdate
+                createdate,
+                ...additionalinfomation
             })
         } catch (error) {
             console.log("error creating the user", error.message);
@@ -67,4 +73,16 @@ export  const createuserdocumentfromauth = async (userAuth) =>{ //this function 
 
     return userdocref;
 };
-// I NEED TO WATCH VID 76 AGAIN TO GET A BETTER UNDERSTANDING 
+// I NEED TO WATCH VID 76 AGAIN TO GET A BETTER UNDERSTANDING  
+
+
+// Exporting a constant function named createuserwithemailAndpassword
+export const createuserwithemailAndpassword = async (email, password) => {
+    // Input validation: Checking if email or password is missing
+    if (!email || !password) return; // If either email or password is falsy, return without further execution
+    
+    // Calling an asynchronous function to create a user with the provided email and password
+    return await createUserWithEmailAndPassword(auth, email, password);
+    // 'auth' likely represents some authentication service or context
+    // 'email' and 'password' are parameters passed to createUserWithEmailAndPassword
+};
