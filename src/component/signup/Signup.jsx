@@ -2,7 +2,8 @@ import React from "react";
 import "./signup.styles.scss"
 import Button from "../../button/Button";
 import Forminput from "../forminput/Forminput";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../context/Context";
 import {
   createuserwithemailAndpassword,
   createuserdocumentfromauth,
@@ -18,6 +19,10 @@ const defaultformfields = {
 const Signup = () => {
   const [formfields, setformfields] = useState(defaultformfields);
   const { displayname, email, password, confirmpassword } = formfields;
+
+  const {setCurrentUser} = useContext(UserContext)
+
+  
 
   //this method will clear out the formfields 
   const resetformfields = () =>{
@@ -35,8 +40,8 @@ const Signup = () => {
     }
 
     try {
-      const user = await createuserwithemailAndpassword(email, password);
-
+      const {user} = await createuserwithemailAndpassword(email, password);
+        setCurrentUser(user)
       await createuserdocumentfromauth(user, { displayname });
       resetformfields()
     } catch (error) {
@@ -98,10 +103,11 @@ const Signup = () => {
           value={confirmpassword}
         />
 
-        <Button type="submit">SUBMIT</Button>
+        <Button type="submit">SUBMIT FORM</Button>
       </form>
     </div>
   );
 };
 
 export default Signup;
+ 
