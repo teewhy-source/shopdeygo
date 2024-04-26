@@ -6,7 +6,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider, 
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, signOut
+  signInWithEmailAndPassword,
+   signOut,
+   onAuthStateChanged
 } from "firebase/auth";
 
 //setting up the firestore, firestore is a different service, so we need to import some methods(firestore, doc,getdoc,setdoc) from firestore. below
@@ -97,3 +99,5 @@ export const signinuserwithemailandpassword = async (email, password) => {
 };
 
 export const Signoutuser =async ()=> await signOut(auth)
+
+export const onAuthStateChangedlistener = (callback) => onAuthStateChanged(auth,callback)

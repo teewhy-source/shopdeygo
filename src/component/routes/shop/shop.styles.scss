@@ -1,0 +1,48 @@
+// shop.styles.scss
+
+.shop-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .shop-item {
+    flex: 1 1 300px; /* This will make each item take up a maximum width of 300px */
+    margin: 10px;
+    border: 1px solid #5e2281;
+    border-radius: 5px;
+    max-height: 600px;
+    max-width: 350px;
+    overflow: hidden; /* This will ensure that the image doesn't overflow outside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 50px rgb(89, 7, 172);
+      cursor: pointer;
+    }
+  
+    .item-content {
+      padding: 20px;
+      line-height: 2rem;
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .item-image {
+      img {
+        max-width:300px;
+        // height: auto;
+        border-radius: 40px;
+        height: 300px;
+        padding-left: 4rem;
+        padding-top: 1rem;
+      }
+    }
+  }
+  

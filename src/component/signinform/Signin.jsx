@@ -2,10 +2,9 @@ import React from "react";
 import "./signin.styles.scss"
 import Button from "../../button/Button";
 import Forminput from "../forminput/Forminput";
-import { useState,useContext } from "react";
-import { UserContext } from "../../context/Context";
+import { useState } from "react";
+
 import {
-  createuserwithemailAndpassword,
   createuserdocumentfromauth,
   signInWithgooglePopup,
   signinuserwithemailandpassword
@@ -22,7 +21,6 @@ const Signin = () => {
   const [formfields, setformfields] = useState(defaultformfields);
   const { email, password,} = formfields;
   
-  const {setCurrentUser} = useContext(UserContext)// this is coming from another component 
 
   //this method will clear out the formfields 
   const resetformfields = () =>{
@@ -34,8 +32,8 @@ const Signin = () => {
 
   const Signinwithgoogle = async () => {
     //asynchronous function becos whenever you u make a call to a database, it has to be asynchronous
-    const { user } = await signInWithgooglePopup();
-    await createuserdocumentfromauth(user)
+    await signInWithgooglePopup();
+   
 
   };
 
@@ -54,7 +52,7 @@ const Signin = () => {
       )
       
 
-      setCurrentUser(user)
+      // setCurrentUser(user)
      resetformfields ()
     } catch (error) {
       switch(error.code){
