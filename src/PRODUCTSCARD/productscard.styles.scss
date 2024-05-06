@@ -1,0 +1,38 @@
+
+.product-card-container {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(46, 10, 207);
+  margin: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  
+
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .price {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 8px;
+  }
+}
+ 

@@ -1,54 +1,46 @@
-$taiwo: rgb(162, 114, 250);
-$main-color: rgba(15, 3, 58, 0.884);
-
-.button-container {
-    // min-width: 165px;
+.button-container{
+    min-width: 165px;
     width: auto;
     height: 50px;
     letter-spacing: 0.5px;
-    // padding: 3px 35px 0 35px;
-    font-size: 23px;
-    
-    background-color: rgb(247, 245, 245);
-    // color: $taiwo;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: black;
+    color: wheat;
     text-transform: uppercase;
-    font-family: "Cousine", monospace, "Griffy", system-ui;
+    font-family: cursive;
     border: none;
     cursor: pointer;
-    display: flex;
-    // border-color: $taiwo;
     justify-content: center;
-    border-radius: 10px;
-    transition: background-color 3s, color 3s; // Added transition for smooth color change
 
-    &:hover {
-        // background-color:$taiwo;
-        color:$taiwo;
-        // border: 1px solid $taiwo;
+    &:hover{
+        background-color: wheat;
+        color: black;
+        border: 1px solid black;
     }
 
-    // google styling 
-    &.google-sign-in {
-        background-color: #4285f4;
-        color: whitesmoke;
+    &.google-sign-in{
+        background-color: #4285e1;
+        color: wheat;
 
-        &:hover {
-            background-color: #4285f4;
+        &.google{
+            background-color: #357ae8;
             border: none;
         }
     }
 
-    // inverted styling
-    &.inverted {
-        background-color: $taiwo;
-        color: $taiwo;
-        border: 5px solid $taiwo;
-        outline-color: $taiwo;
+    &.inverter{
+        background-color: wheat;
+        color: black;
+        border: none;
 
-        &:hover {
-            background-color: $taiwo;
-            color: whitesmoke;
+        &:hover{
+            background-color: black;
+            color: wheat;
             border: none;
         }
     }
+
+  
 }

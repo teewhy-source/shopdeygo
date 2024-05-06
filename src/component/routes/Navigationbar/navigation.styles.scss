@@ -1,55 +1,66 @@
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-style: hidden;
-    background-color: rgba(238, 236, 235, 0.87); /* Adjust background color */
-    box-shadow: 0 2px 4px rgba(46, 11, 170, 0.1); /* Add box shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #faf3f3;
+  animation: fadeInDown 0.5s ease-in-out forwards; /* Add animation */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .logo-container {
-    text-decoration: none;
-    font-family: "Cousine", monospace, "Griffy", system-ui;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.logo-container {
+  text-decoration: none;
+}
+
+.image {
+  width: 100px; /* Adjust as needed */
+  border-radius: 3rem;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.sign-out {
+  cursor: pointer;
+}
+
+.cart-icon {
+  margin-left: 1rem;
+  animation: bounce 0.5s infinite alternate; /* Add animation */
+
   
-  .image {
-    width: 100px; /* Adjust width of the logo image */
-    height: auto;
-    border-radius: 3rem;
-    animation: glitch 2s infinite; /* Apply glitch animation */
+  
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
   }
-  
-  .nav-links-container {
-    display: flex;
+  to {
+    transform: translateY(-5px);
   }
-  
-  .nav-link {
-    margin-left: 20px;
-    text-decoration: none;
-    color: solid rgb(143, 114, 250); /* Adjust color of the link */
-    font-family: "Cousine", monospace, "Griffy", system-ui;
-  }
-  
-  .nav-link:hover {
-    color: rgba(15, 3, 58, 0.884); /* Adjust color on hover */
-  }
-  
-  @keyframes glitch {
-    0% {
-      transform: translate(0);
-    }
-    25% {
-      transform: translate(-5px, 5px);
-    }
-    50% {
-      transform: translate(5px, -5px);
-    }
-    75% {
-      transform: translate(-5px, 5px);
-    }
-    100% {
-      transform: translate(0);
-    }
-  }
-  
+}
