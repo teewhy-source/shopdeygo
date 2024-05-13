@@ -5,17 +5,21 @@
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
+    color: #5d0c83; 
 
     .checkout-header{
         width: 100%;
         padding: 10px 0;
         display: flex;
+        color: #5d0c83; 
         justify-content: space-between;
         border-bottom: 1px solid rgb(62, 10, 129);
 
         .header-block{
             text-transform: capitalize;
-            width: 23%;
+            width:50%;
+            font-size: 1.3rem;
+            color: #5d0c83; 
 
             &:last-child{
                 width: 8%;
@@ -27,5 +31,6 @@
         margin-top: 30px;
         margin-left: auto;
         font-size: 36px;
+        
     }
 }

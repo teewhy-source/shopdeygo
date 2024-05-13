@@ -3,6 +3,8 @@ import Button from "../button/Button";
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/Cartcontext";
+
+
 const Productscard = ({ product }) => {
     const { name, price, image } = product;
     console.log(product);
