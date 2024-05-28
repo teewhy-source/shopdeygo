@@ -3,17 +3,15 @@ import Button from "../button/Button";
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/Cartcontext";
-
-
 const Productscard = ({ product }) => {
-    const { name, price, image } = product;
+    const { name, price, imageUrl } = product;
     console.log(product);
     const { additemtocart} = useContext(CartContext);
   
     const addproducttocart = () => additemtocart(product);
     return (
       <div className="product-card-container">
-        <img src={image} alt={`Product: ${name}`} />
+        <img src={imageUrl} alt={`Product: ${name}`} />
         <div className="footer">
           <span className="name">{name}</span>
           <span className="price">Price: ${price}</span> 

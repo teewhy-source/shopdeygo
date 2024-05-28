@@ -1,4 +1,4 @@
-.category-container {
+.directory-item-container {
     min-width: 32.2%;
     height: 240px;
     flex: 1 1 auto;
@@ -18,7 +18,7 @@
         transform: scale(1.1);
         transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
       }
-      .category-body-container {
+      .body {
         opacity: 1;
         transition: opacity 0.5s ease-in-out;
         font-family: "Cousine", monospace;
@@ -45,7 +45,7 @@
       transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
   
-    .category-body-container {
+    .body {
       height: 90px;
       width: 13rem;
       font-family: "Cousine", monospace;
@@ -69,7 +69,7 @@
         font-size: 1.8rem;
         color: rgba(15, 3, 58, 0.884);
         font-family: "Cousine", monospace;
-     
+        text-transform: capitalize;
       }
   
       p {

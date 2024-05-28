@@ -1,4 +1,4 @@
-.cart-dropdown-container{
+.cart-dropdown-container {
     position: absolute;
     width: 240px;
     height: 340px;
@@ -10,20 +10,109 @@
     top: 90px;
     right: 40px;
     z-index: 5;
-
-    .empty-message{
-        font-size: 18px;
-        margin: 50px auto;
-    }
-
-    .cart-items{
-        height: 240px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: slideDown 0.5s ease-out;
+  
+    .cart-items {
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+      margin-bottom: 10px;
+  
+      .empty-message {
+        font-size: 16px;
+        text-align: center;
+        color: #a9a9a9;
         display: flex;
         flex-direction: column;
-        overflow: scroll;
+        align-items: center;
+        animation: fadeIn 0.5s ease-in-out;
+  
+        svg {
+          margin: 5px 0;
+          color: #ffa07a;
+          animation: float 3s ease-in-out infinite;
+        }
+      }
+  
+      .cart-item {
+        animation: fadeIn 0.5s ease-in-out;
+  
+        &.fade-out {
+          animation: fadeOut 0.5s ease-in-out;
+        }
+      }
+  
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+  
+      ::-webkit-scrollbar-thumb {
+        background-color: blueviolet;
+        border-radius: 10px;
+      }
     }
-
-    button{
-        margin-top: auto ;
+  
+    button {
+      margin-top: auto;
+      background-color: blueviolet;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #5e3db3;
+      }
     }
-}
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  

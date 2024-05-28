@@ -17,7 +17,10 @@ import {
     doc,
     getDoc,
     setDoc,
-    Firestore
+    collection,
+    writeBatch,
+    query,
+    getDocs
 } from "firebase/firestore"
 
 
@@ -42,7 +45,35 @@ googleprovider.setCustomParameters({
 export const auth= getAuth()
 export const signInWithgooglePopup =()=> signInWithPopup(auth,googleprovider)//annonymose function, so passed the auth that i created  and googleproviderprovider that i generated up
 export const signinwithgoogleredirect =()=> signInWithRedirect(auth,googleprovider)
-export const database = getFirestore ()
+
+export const database = getFirestore () 
+export const addcollectionanddocument= async(collectionKey,objectstoadd) => {
+    const collectionref=collection(database,collectionKey)
+    const batch = writeBatch(database)
+    objectstoadd.forEach((object)=> {
+        const docref = doc(collectionref, object.title.toLowerCase())
+        batch.set(docref,object)
+    })
+
+    await batch.commit() // IT UPLOADS UR JSON DATA TO FIRESBASE
+    console.log("done");
+}
+
+//to retrieve our datas from firebase and
+// if firebase change thier implimentation, it wont really affect the code, all i have to do is work on this function  
+export const GetCategoriesAndDocuments = async ()=>{
+    const collectionref=collection(database, "categories")
+    const q = query(collectionref)
+
+    const  querySnapshot = await getDocs(q)
+    const categorymap =  querySnapshot.docs.reduce((accumulator,docSnapshot)=>{
+       const {title,items} = docSnapshot.data();
+       accumulator[title.toLowerCase()]=items;
+       return accumulator;
+    },{})
+    console.log('Fetched Categories:', categorymap); // Debug log
+    return categorymap
+}
 
 export  const createuserdocumentfromauth = async (
     userAuth,

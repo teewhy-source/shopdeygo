@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { GiClothes } from "react-icons/gi";
 import Logo from "../../../assets/images/teewhy2.jpg";
-import "./navigation.styles.scss";
+import { NavigationContainer,NavLink,NavLinks,LogoContainer } from "./Navigation.styles.jsx";
 import { Cartdropdown } from "../../../cartdropdown/Cartdropdown";
 import Carticon from "../../../cartIcon/Carticon";
 import { UserContext } from "../../../context/Context";
@@ -18,35 +19,35 @@ const Navigation = () => {
   // }
   return (
     <>
-      <div className="navigation">
+      <NavigationContainer>
         {/* this will link back to the home page */}
-        <Link className="logo-container" to="/">
-          <img src={Logo} alt="" srcset="" className="image" />
-        </Link>
+        <LogoContainer className="logo-container" to="/">
+          <GiClothes/>
+        </LogoContainer>
 
-        <div className="links-container">
-          <Link className="nav-link" to="/shop">
+        <NavLinks>
+          <NavLink to="/shop">
             SHOP-NOW
-          </Link>
+          </NavLink>
 
           {currentUser ? (
-            <span className="nav-link" onClick={Signoutuser}>
+            <NavLink as="span" onClick={Signoutuser}>
               {" "}
               Sign out {""}
-            </span>
+            </NavLink>
           ) : (
-            <Link className="nav-link" to="/auth ">
+            <NavLink to='/auth' >
               SIGN IN
-            </Link>
+            </NavLink>
           )}
 
           <div className="cart-icon">
             <Carticon />
           </div>
 
-        </div>
+        </NavLinks>
         {iscartopen && <Cartdropdown/>}
-      </div>
+      </NavigationContainer>
       <Outlet />
     </>
   );
