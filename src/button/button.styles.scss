@@ -1,4 +1,4 @@
-.button-container{
+.button-container {
     min-width: 165px;
     width: auto;
     height: 50px;
@@ -7,43 +7,42 @@
     padding: 0 35px 0 35px;
     font-size: 15px;
     gap: 1rem;
-    // background-color: black;
-    // color: wheat;
     text-transform: uppercase;
     font-family: cursive;
     border: none;
     cursor: pointer;
     justify-content: center;
-border-radius: 1rem;
-// width: 9rem;
-    &:hover{
-        // background-color: wheat;
-        color: rgb(57, 21, 189);
-        // border: 1px solid black;
-    }
-
-    &.google-sign-in{
-        background-color: #6442e1;
-        color: rgb(233, 231, 227);
-      
-        &.google{
-            background-color: #a1b0c9;
-            border: none;
-            
-        }
-    }
-
-    &.inverter{
-        background-color: wheat;
-        color: black;
-        border: none;
-
-        &:hover{
-            background-color: black;
-            color: rgb(245, 179, 196);
-            border: none;
-        }
-    }
-
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   
-}
+    &:hover {
+      transform: scale(1.05);
+      color: rgb(57, 21, 189);
+    }
+  
+    &.google-sign-in {
+      background-color: #6442e1;
+      color: rgb(233, 231, 227);
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  
+      &:hover {
+        background-color: #9f9dac;
+        color: rgb(46, 12, 100);
+        transform: scale(1.05);
+      }
+    }
+  
+    &.inverted {
+        background-color: #e1425c;
+      color: rgb(187, 12, 12);
+      border: none;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  
+      &:hover {
+        background-color: black;
+        color: rgb(221, 35, 81);
+        transform: scale(1.05);
+      }
+    }
+  }
+  

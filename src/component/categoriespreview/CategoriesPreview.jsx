@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CategoriesContext } from "../../context/Productcontext/CategoriesContext";
 // import Productscard from "../../../PRODUCTSCARD/Productscard";
 import CategoryPreview from "../categotypreview/CategoryPreview";
-import "./Categories.styles.scss";
+
 
 
 const CategoriesPreview= () => {

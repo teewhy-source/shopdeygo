@@ -50,7 +50,7 @@ const categories = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "Shoes",
     imageUrl:
       "https://images.pexels.com/photos/1557980/pexels-photo-1557980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",

@@ -11,7 +11,7 @@
     border-radius: 1rem;
     font-family: "Cousine", monospace;
     position: relative; // Added position relative to create stacking context for absolute positioning
-  
+    margin-top: 2rem;
     &:hover {
       cursor: pointer;
       .background-image {

@@ -1,24 +1,23 @@
-import React from 'react'
+import React from 'react';
+import "./button.styles.scss";
 
-import "./button.styles.scss"
-/*
- the types of button i need
-default button
-inverted button
-google sign in button
-*/ 
+/* The types of button I need: 
+   default button, 
+   inverted button, 
+   google sign-in button 
+*/
 
+const BUTTON_TYPE_CLASSES = {
+  google: "google-sign-in",
+  inverted: "inverted"
+};
 
-const BUTTON_TYPE_CLASSES ={
-    google:"google-sign-in",
-    inverted:"inverted"
-}
-export const Button = ({children, buttontype, ...OtherProps}) => {
+export const Button = ({ children, buttontype, ...OtherProps }) => {
   return (
-  <button className={`button-container ${BUTTON_TYPE_CLASSES[buttontype]}`} {...OtherProps}>
-    {children}
-  </button>
-  )
-}
+    <button className={`button-container ${BUTTON_TYPE_CLASSES[buttontype]}`} {...OtherProps}>
+      {children}
+    </button>
+  );
+};
 
 export default Button;
