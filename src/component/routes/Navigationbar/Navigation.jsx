@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { GiClothes } from "react-icons/gi";
-import Logo from "../../../assets/images/teewhy2.jpg";
+
 import { NavigationContainer,NavLink,NavLinks,LogoContainer,MainContentWrapper } from "./Navigation.styles.jsx";
 import { Cartdropdown } from "../../../cartdropdown/Cartdropdown";
 import Carticon from "../../../cartIcon/Carticon";
@@ -19,6 +19,7 @@ const Navigation = () => {
         <h1>DIVINE'S  </h1>
         </LogoContainer>
         <NavLinks>
+          <NavLink to="/contactus">CONTACT US</NavLink>
           <NavLink to="/shop">SHOP-NOW</NavLink>
           {currentUser ? (
             <NavLink as="span" onClick={Signoutuser}>
@@ -30,6 +31,8 @@ const Navigation = () => {
           <div className="cart-icon">
             <Carticon />
           </div>
+
+        
         </NavLinks>
         {iscartopen && <Cartdropdown />}
       </NavigationContainer>

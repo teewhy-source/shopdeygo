@@ -5,7 +5,7 @@ import Navigation from "./component/routes/Navigationbar/Navigation";
 import Authentication from "./component/routes/authentication/Authentication";
 import Shop from "./component/routes/shop/Shop";
 import Checkout from "./component/routes/checkout/Checkout";
-
+import Contactus from "./component/contactus/Contactus";
 
 
 
@@ -17,6 +17,7 @@ const App = () => {
         <Route path="shop/*" element={<Shop />} />
         <Route path="auth" element={<Authentication />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="contactus" element={<Contactus />} />
         {/* NEXTED ROUTING */}
       </Route>
     </Routes>

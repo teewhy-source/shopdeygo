@@ -1,7 +1,17 @@
-.authentication-container{
+.authentication-container {
   display: flex;
   justify-content: space-between;
   width: 900px;
   margin: 30px auto;
-  
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    margin: 30px 20px; // Adding some horizontal margin for better spacing on mobile
+
+    > * {
+      width: 100%;
+      margin-bottom: 10px; // Adding some spacing between the sign-in and sign-up forms
+    }
+  }
 }

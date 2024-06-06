@@ -1,0 +1,101 @@
+.contact-us-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Ensure full viewport height
+  background-color: #f9f9f9; // Optional: a light background for better visual
+}
+
+.contact-us-container {
+  display: flex;
+  flex-direction: column; // Stack items vertically by default
+  padding: 20px;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(111, 21, 163, 0.459);
+  font-family: Arial, sans-serif;
+  margin: auto;
+  margin-top: 10rem;
+
+  .contact-details {
+    margin-bottom: 20px; // Add margin for spacing between sections
+    h1 {
+      color: rgb(165, 12, 236);
+    }
+    p {
+      margin: 10px 0;
+      color: rgb(165, 12, 236);
+    }
+    .contact-info {
+      p {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    .input-group {
+      display: flex;
+      flex-direction: column; // Stack inputs vertically by default
+      margin-bottom: 15px;
+
+      input {
+        width: 100%; // Full width for small screens
+        margin-bottom: 15px; // Add margin for spacing between inputs
+      }
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #8e24aa;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        background-color: #7b1fa2;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-us-container {
+    flex-direction: row; // Side-by-side layout for larger screens
+    .contact-details, .contact-form {
+      flex: 1; // Equal width for both sections
+    }
+    .contact-details {
+      margin-right: 20px; // Space between details and form
+    }
+    .contact-form {
+      .input-group {
+        flex-direction: row; // Side-by-side inputs for larger screens
+        input {
+          width: 48%; // Adjust width for side-by-side inputs
+        }
+      }
+    }
+  }
+}

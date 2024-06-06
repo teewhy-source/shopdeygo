@@ -21,8 +21,7 @@ const addcartitem = (cartitems, producttoadd) => {
   return [...cartitems, { ...producttoadd, quantity: 1 }];
 };
 
-
-// the decreament function 
+// the decreament function
 const removecartitem = (cartitems, cartitemtoremove) => {
   // find the cart item to remove
   const exitingitem = cartitems.find(
@@ -42,9 +41,8 @@ const removecartitem = (cartitems, cartitemtoremove) => {
   );
 };
 
- const clearcartitem = (cartitems,cartitemtoclear)=>
-   cartitems.filter((cartitem) => cartitem.id !== cartitemtoclear.id);
- 
+const clearcartitem = (cartitems, cartitemtoclear) =>
+  cartitems.filter((cartitem) => cartitem.id !== cartitemtoclear.id);
 
 export const CartContext = createContext({
   iscartopen: false,
@@ -53,17 +51,15 @@ export const CartContext = createContext({
   additemtocart: () => {},
   removeitemfromcart: () => {},
   cartcount: 0,
-  clearitemfromcart:()=>{},
-  carttotal:0 
+  clearitemfromcart: () => {},
+  carttotal: 0,
 });
-
-
 
 export const CartProvider = ({ children }) => {
   const [iscartopen, setiscartopen] = useState(false);
   const [cartitems, setcartitems] = useState([]);
   const [cartcount, setcartcount] = useState(0);
-  const [carttotal, setcarttotal] = useState(0); 
+  const [carttotal, setcarttotal] = useState(0);
 
   useEffect(() => {
     const newcartcount = cartitems.reduce(
@@ -73,13 +69,12 @@ export const CartProvider = ({ children }) => {
     setcartcount(newcartcount);
   }, [cartitems]);
 
-
   useEffect(() => {
     const newcarttotal = cartitems.reduce(
       (total, cartitem) => total + cartitem.quantity * cartitem.price,
       0
     );
-    setcarttotal( newcarttotal );
+    setcarttotal(newcarttotal);
   }, [cartitems]);
 
   const additemtocart = (producttoadd) => {
@@ -90,11 +85,9 @@ export const CartProvider = ({ children }) => {
     setcartitems(removecartitem(cartitems, cartitemtoremove));
   };
 
-
   const clearitemfromcart = (cartitemtoclear) => {
     setcartitems(clearcartitem(cartitems, cartitemtoclear));
   };
-
 
   const value = {
     iscartopen,
@@ -104,8 +97,8 @@ export const CartProvider = ({ children }) => {
     cartitems,
     cartcount,
     clearitemfromcart,
-    total:0,
-    carttotal
+    total: 0,
+    carttotal,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

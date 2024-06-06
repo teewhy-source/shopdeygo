@@ -1,9 +1,38 @@
-.sing-up-container{
+.sign-up-container {
     display: flex;
     flex-direction: column;
     width: 380px;
-    h2{
-        margin: 10px 0;
-        
+    margin-top: 10rem;
+    padding: 1rem; // Add some padding for better spacing on mobile
+    // margin-top: 2rem;
+    h2 {
+      margin: 10px 0;
+      color: rgb(165, 12, 236);
     }
-}
+  
+    span {
+      color: rgb(165, 12, 236);
+    }
+  
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        
+        button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 5rem;
+      padding: 1rem;
+    }
+  }
+  

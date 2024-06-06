@@ -1,39 +1,34 @@
 import React from "react";
-import "./signin.styles.scss"
+import "./signin.styles.scss";
 import Button from "../../button/Button";
+
 import Forminput from "../forminput/Forminput";
 import { useState } from "react";
 
 import {
   signInWithgooglePopup,
-  signinuserwithemailandpassword
+  signinuserwithemailandpassword,
 } from "../../utility-files/firebase/Firebase";
 
 const defaultformfields = {
-  
   email: "",
   password: "",
-  
 };
 
 const Signin = () => {
   const [formfields, setformfields] = useState(defaultformfields);
-  const { email, password,} = formfields;
-  
+  const { email, password } = formfields;
 
-  //this method will clear out the formfields 
-  const resetformfields = () =>{
-    setformfields(defaultformfields)
-  }
+  //this method will clear out the formfields
+  const resetformfields = () => {
+    setformfields(defaultformfields);
+  };
 
   console.log(formfields);
-
 
   const Signinwithgoogle = async () => {
     //asynchronous function becos whenever you u make a call to a database, it has to be asynchronous
     await signInWithgooglePopup();
-   
-
   };
 
   const handlesubmit = async (event) => {
@@ -45,22 +40,20 @@ const Signin = () => {
     // }
 
     try {
-      const {user} = await signinuserwithemailandpassword (
-        email,
-        password
-      )
-      
+      const { user } = await signinuserwithemailandpassword(email, password);
 
       // setCurrentUser(user)
-     resetformfields ()
+      resetformfields();
     } catch (error) {
-      switch(error.code){
-        case "auth/invalid-credential": alert("incorrect password for email")
-        break
+      switch (error.code) {
+        case "auth/invalid-credential":
+          alert("incorrect password for email");
+          break;
         case "auth/user-not-found":
-          alert("No user associated with this email")
-          break
-          default: console.log(error);
+          alert("No user associated with this email");
+          break;
+        default:
+          console.log(error);
       }
       // if (error.code=="auth/invalid-credential") {
       //   alert ("incorrect password for email")
@@ -76,15 +69,11 @@ const Signin = () => {
 
   return (
     <div className="sign-up-container">
-        <h2>Already have an account?</h2>
+      <h2>Already have an account?</h2>
       <span>Sign-in with ur Gmail and Password</span>
       <form onSubmit={handlesubmit}>
-        
-      
-
-        
         <Forminput
-         label= "EMAIL"
+          label="EMAIL"
           type="email"
           required
           onChange={handlechange}
@@ -92,9 +81,8 @@ const Signin = () => {
           value={email}
         />
 
-        
         <Forminput
-         label= "PASSWORD"
+          label="PASSWORD"
           type="password"
           required
           onChange={handlechange}
@@ -102,11 +90,11 @@ const Signin = () => {
           value={password}
         />
 
-        
-       
         <div className="button-container">
-        <Button type="submit" >Sign in</Button>
-        <Button type="button" buttontype="google" onClick={ Signinwithgoogle}>Google </Button>
+          <Button type="submit">Sign in</Button>
+          <Button type="button" buttontype="google" onClick={Signinwithgoogle}>
+            Google{" "}
+          </Button>
         </div>
       </form>
     </div>
