@@ -56,7 +56,7 @@ export const addcollectionanddocument= async(collectionKey,objectstoadd) => {
     })
 
     await batch.commit() // IT UPLOADS UR JSON DATA TO FIRESBASE
-    console.log("done");
+    
 }
 
 //to retrieve our datas from firebase and
@@ -71,7 +71,7 @@ export const GetCategoriesAndDocuments = async ()=>{
        accumulator[title.toLowerCase()]=items;
        return accumulator;
     },{})
-    console.log('Fetched Categories:', categorymap); // Debug log
+    // Debug log
     return categorymap
 }
 
@@ -81,11 +81,10 @@ export  const createuserdocumentfromauth = async (
     ) =>{ //this function receives user authentication object
     if (!userAuth) return;
     const userdocref = doc(database, "users",userAuth.uid)
-    console.log(userdocref);
+  
 
     const usersnapshot = await getDoc(userdocref) // the snapshot is like a data and it is also a specific kinda object
-    console.log(usersnapshot);
-    console.log(usersnapshot.exists())
+  
 
     //if user data does not exist == create/set the document with the data from userauth in my collection
     //if user data exists == ruturn true
@@ -100,7 +99,7 @@ export  const createuserdocumentfromauth = async (
                 ...additionalinfomation
             })
         } catch (error) {
-            console.log("error creating the user", error.message);
+           
         }
 
     }// all this is what is what will happen if user does not exist 

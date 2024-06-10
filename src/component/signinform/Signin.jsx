@@ -24,7 +24,7 @@ const Signin = () => {
     setformfields(defaultformfields);
   };
 
-  console.log(formfields);
+  
 
   const Signinwithgoogle = async () => {
     //asynchronous function becos whenever you u make a call to a database, it has to be asynchronous
@@ -53,12 +53,12 @@ const Signin = () => {
           alert("No user associated with this email");
           break;
         default:
-          console.log(error);
+        
       }
       // if (error.code=="auth/invalid-credential") {
       //   alert ("incorrect password for email")
       // } else if(auth/invalid-credential)
-      console.log(error);
+    
     }
   };
 

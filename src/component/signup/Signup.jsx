@@ -29,7 +29,7 @@ const Signup = () => {
     setformfields(defaultformfields)
   }
 
-  console.log(formfields);
+
 
   const handlesubmit = async (event) => {
     event.preventDefault();
@@ -48,7 +48,7 @@ const Signup = () => {
       if ((error.code  === "auth/email-already-in-use")) {
         alert("cannot create user, email already exist");
       } else {
-        console.log("user encountered an error", error);
+       
       }
     }
   };
