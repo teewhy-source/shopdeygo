@@ -4,6 +4,7 @@
   align-items: center;
   min-height: 100vh; // Ensure full viewport height
   background-color: #f9f9f9; // Optional: a light background for better visual
+  padding: 20px; // Ensure there is padding around the container
 }
 
 .contact-us-container {
@@ -11,12 +12,11 @@
   flex-direction: column; // Stack items vertically by default
   padding: 20px;
   max-width: 1000px;
+  width: 100%; // Ensure the container takes up the full width
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(111, 21, 163, 0.459);
   font-family: Arial, sans-serif;
-  margin: auto;
-  margin-top: 10rem;
 
   .contact-details {
     margin-bottom: 20px; // Add margin for spacing between sections
@@ -94,8 +94,42 @@
         flex-direction: row; // Side-by-side inputs for larger screens
         input {
           width: 48%; // Adjust width for side-by-side inputs
+          margin-right: 4%; // Space between the two inputs
+          &:last-child {
+            margin-right: 0; // Remove margin for the last child
+          }
         }
       }
     }
   }
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  position: relative; // To position the close button correctly
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
