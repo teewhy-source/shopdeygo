@@ -27,7 +27,7 @@ export const Cartdropdown = () => {
             <Cartitem key={item.id} cartitem={item} />
           ))) :(
             <span> <FaRegSadTear /><br />
-             your cart <CiShoppingCart/> is empty, pls fill in up with some items<FaCartArrowDown/>  </span>
+             your cart <CiShoppingCart/> is empty, pls fill it up with some items<FaCartArrowDown/>  </span>
           )
         }
    
