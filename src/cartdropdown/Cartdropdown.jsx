@@ -8,6 +8,10 @@ import { CiShoppingCart } from "react-icons/ci";
 import Button from "../button/Button";
 import Cartitem from "../component/cartitem/Cartitem";
 import { FaRegSadTear } from "react-icons/fa";
+
+
+
+
 export const Cartdropdown = () => {
   const { cartitems } = useContext(CartContext);
   const navigate = useNavigate()

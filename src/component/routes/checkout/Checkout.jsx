@@ -15,7 +15,7 @@ const Checkout = () => {
         </div>
 
         <div className="header-block">
-          <span> description</span>
+          <span> Name </span>
         </div>
 
         <div className="header-block">
