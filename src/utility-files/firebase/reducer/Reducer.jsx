@@ -1,0 +1,1 @@
+export const createaction = (type,payload) => ({type,payload})
