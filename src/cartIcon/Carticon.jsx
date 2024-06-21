@@ -11,7 +11,7 @@ const Carticon = () => {
   return (
     <div className="cart-icon-container" onClick={toggleiscartopen}>
       {iscartopen ? (
-        <FaTimes className="icon" style={{ maxWidth: '3rem', height: '3rem' }} />
+        <FaTimes className="icon" style={{ maxWidth: '3rem', height: '3rem', }} />
       ) : (
         <img src={shopicon} alt="Shopping Icon" className="image" style={{ maxWidth: '3rem', height: '3rem' }} />
       )}
